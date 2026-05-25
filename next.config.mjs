@@ -2,7 +2,7 @@
 const nextConfig = {
   reactCompiler: true,
   images: {
-    domains: ["lh3.googleusercontent.com"],
+    domains: ["lh3.googleusercontent.com","images.unsplash.com"],
   },
 };
 

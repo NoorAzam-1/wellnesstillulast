@@ -1,35 +1,144 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@theme {
-  --animate-marquee: marquee 20s linear infinite;
-
-  @keyframes marquee {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-100%); }
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --primary: #1f7d2d;
+  --secondary: #b6ff7a;
+  --dark: #102414;
+  --light: #f7faf5;
+  --border: #dde8d8;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", sans-serif;
+  background: var(--light);
+  color: var(--dark);
+}
+
+/* Utility Classes */
+
+.bg-light {
+  background: var(--light);
+}
+
+.text-dark {
+  color: var(--dark);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.bg-primary {
+  background: var(--primary);
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
+
+.border-border {
+  border-color: var(--border);
+}
+
+/* Buttons */
+
+.primary-btn {
+  @apply px-8 py-5 rounded-full bg-green-700 text-white font-semibold hover:scale-105 transition-all duration-300 shadow-lg;
+}
+
+.secondary-btn {
+  @apply px-8 py-5 rounded-full border border-green-700 text-green-700 font-semibold hover:bg-green-50 transition-all duration-300;
+}
+
+.learn-btn {
+  @apply mt-8 text-green-700 font-semibold text-lg hover:translate-x-2 transition-all duration-300;
+}
+
+.impact-btn {
+  @apply bg-white text-green-700 px-10 py-5 rounded-full text-lg font-semibold hover:scale-105 transition-all duration-300 shadow-2xl;
+}
+
+/* Typography */
+
+.section-tag {
+  @apply text-green-700 uppercase tracking-[5px] font-semibold;
+}
+
+.section-title {
+  @apply text-5xl md:text-6xl font-bold text-[#102414] leading-tight;
+}
+
+.section-description {
+  @apply text-lg text-gray-600 leading-8 max-w-3xl mx-auto;
+}
+
+/* Cards */
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.05),
+    0 0 30px rgba(85, 255, 85, 0.08);
+}
+
+.glass-dark {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.initiative-card {
+  @apply bg-white rounded-[35px] overflow-hidden border border-[#dde8d8] hover:-translate-y-3 transition-all duration-500 shadow-xl;
+}
+
+.initiative-image {
+  @apply w-full h-[280px] object-cover transition-all duration-700 group-hover:scale-110;
+}
+
+.floating-icon {
+  @apply absolute bottom-[-30px] left-10 w-20 h-20 rounded-full bg-white flex items-center justify-center text-4xl shadow-2xl border border-[#dde8d8];
+}
+
+/* Backgrounds */
+
+.impact-bg {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(16, 36, 20, 0.95),
+      rgba(31, 125, 45, 0.92)
+    ),
+    url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1600");
+  background-size: cover;
+  background-position: center;
+}
+
+.cta-bg {
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.45)
+    ),
+    url("https://images.unsplash.com/photo-1473773508845-188df298d2d1?q=80&w=1600");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Scroll */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .section-title {
+    @apply text-4xl;
+  }
 }
