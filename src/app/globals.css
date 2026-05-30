@@ -1,4 +1,3 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss";
 
@@ -15,8 +14,6 @@ body {
   background: var(--light);
   color: var(--dark);
 }
-
-/* Utility Classes */
 
 .bg-light {
   background: var(--light);
@@ -42,8 +39,6 @@ body {
   border-color: var(--border);
 }
 
-/* Buttons */
-
 .primary-btn {
   @apply px-8 py-5 rounded-full bg-green-700 text-white font-semibold hover:scale-105 transition-all duration-300 shadow-lg;
 }
@@ -60,8 +55,6 @@ body {
   @apply bg-white text-green-700 px-10 py-5 rounded-full text-lg font-semibold hover:scale-105 transition-all duration-300 shadow-2xl;
 }
 
-/* Typography */
-
 .section-tag {
   @apply text-green-700 uppercase tracking-[5px] font-semibold;
 }
@@ -74,16 +67,14 @@ body {
   @apply text-lg text-gray-600 leading-8 max-w-3xl mx-auto;
 }
 
-/* Cards */
-
 .glass-card {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(25px);
   border: 1px solid rgba(255, 255, 255, 0.4);
 
   box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.05),
-    0 0 30px rgba(85, 255, 85, 0.08);
+    0 10px 40px rgba(0, 0, 0, 0.06),
+    0 0 40px rgba(34, 197, 94, 0.08);
 }
 
 .glass-dark {
@@ -104,15 +95,9 @@ body {
   @apply absolute bottom-[-30px] left-10 w-20 h-20 rounded-full bg-white flex items-center justify-center text-4xl shadow-2xl border border-[#dde8d8];
 }
 
-/* Backgrounds */
-
 .impact-bg {
   background:
-    linear-gradient(
-      135deg,
-      rgba(16, 36, 20, 0.95),
-      rgba(31, 125, 45, 0.92)
-    ),
+    linear-gradient(135deg, rgba(16, 36, 20, 0.95), rgba(31, 125, 45, 0.92)),
     url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1600");
   background-size: cover;
   background-position: center;
@@ -120,25 +105,35 @@ body {
 
 .cta-bg {
   background:
-    linear-gradient(
-      rgba(0, 0, 0, 0.45),
-      rgba(0, 0, 0, 0.45)
-    ),
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
     url("https://images.unsplash.com/photo-1473773508845-188df298d2d1?q=80&w=1600");
   background-size: cover;
   background-position: center;
 }
 
-/* Scroll */
 
 html {
   scroll-behavior: smooth;
 }
 
-/* Responsive */
 
 @media (max-width: 768px) {
   .section-title {
     @apply text-4xl;
   }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+  display: flex;
+  width: max-content; 
 }
