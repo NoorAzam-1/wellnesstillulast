@@ -1,14 +1,14 @@
-import AnnouncementBar from "@/components/AnnouncementBar";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import Hero from "@/components/Hero";
+import AnnouncementBar from "@/components/common/AnnouncementBar";
+import Header from "@/components/common/Header";
+import Footer from "@/components/common/Footer";
+import Home from "@/components/home/Home";
 
-export default function Home() {
+export default function page() {
   return (
     <main className="bg-[#fff8f4] text-[#221a11] overflow-hidden">
       <AnnouncementBar />
       <Header />   
-      <Hero />  
+      <Home />  
       <Footer />
     </main>
   );
