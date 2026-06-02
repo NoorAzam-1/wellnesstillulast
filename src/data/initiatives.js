@@ -3,19 +3,13 @@ export const INITIATIVES_DATA = [
     id: "carbon-garden",
     title: "Carbon Garden",
     category: "Land & Forests",
-    icon: "Sprout", // Added
-    image:
-      "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1600&q=80",
-    shortDesc:
-      "Creating green spaces that absorb carbon and combat climate change naturally.",
-    longDesc:
-      "Carbon Garden is an innovative environmental initiative focused on increasing natural carbon sequestration through dense plantation systems. These gardens transform underutilized spaces into thriving green ecosystems capable of capturing atmospheric carbon dioxide while improving biodiversity, soil fertility, and community well-being.",
-    whyItMatters:
-      "Climate change and rapid urbanization continue to increase carbon emissions worldwide. Carbon Gardens act as natural carbon sinks that help reduce greenhouse gases while creating healthier and greener living environments.",
-    keyBenefit:
-      "Utilizes multi-layered plantation systems to maximize carbon absorption and ecological restoration.",
-    futureVision:
-      "Develop thousands of community-based carbon gardens that contribute to cleaner air, healthier ecosystems, and climate resilience.",
+    icon: "Sprout",
+    image: "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1600&q=80",
+    shortDesc: "Creating green spaces that absorb carbon and combat climate change naturally.",
+    longDesc: "Carbon Garden is an innovative environmental initiative focused on increasing natural carbon sequestration through dense plantation systems. These gardens transform underutilized spaces into thriving green ecosystems capable of capturing atmospheric carbon dioxide while improving biodiversity, soil fertility, and community well-being.",
+    whyItMatters: "Climate change and rapid urbanization continue to increase carbon emissions worldwide. Carbon Gardens act as natural carbon sinks that help reduce greenhouse gases while creating healthier and greener living environments.",
+    keyBenefit: "Utilizes multi-layered plantation systems to maximize carbon absorption and ecological restoration.",
+    futureVision: "Develop thousands of community-based carbon gardens that contribute to cleaner air, healthier ecosystems, and climate resilience.",
     stats: {
       primary: "12.4 Tons",
       label: "CO₂ Captured Annually",
@@ -42,25 +36,30 @@ export const INITIATIVES_DATA = [
       "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
       "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07",
     ],
+    products: [
+      { id: "cg-1", name: "Organic Compost Booster", price: "₹299", rating: 4.8, image: "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=500&q=80" },
+      { id: "cg-2", name: "Carbon-Sinking Soil Mix", price: "₹450", rating: 4.7, image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=500&q=80" },
+      { id: "cg-3", name: "Native Tree Sapling Kit", price: "₹599", rating: 4.9, image: "https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80" },
+      { id: "cg-4", name: "Biodegradable Planter Pots", price: "₹180", rating: 4.5, image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=500&q=80" },
+      { id: "cg-5", name: "Natural Earthworm Castings", price: "₹350", rating: 4.9, image: "https://images.unsplash.com/photo-1592150621744-aca64f48394a?auto=format&fit=crop&w=500&q=80" },
+      { id: "cg-6", name: "Microbial Root Activator", price: "₹240", rating: 4.6, image: "https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&w=500&q=80" },
+      { id: "cg-7", name: "Eco Grass Seed Blend", price: "₹399", rating: 4.4, image: "https://images.unsplash.com/photo-1533460004989-cef01064af7e?auto=format&fit=crop&w=500&q=80" },
+      { id: "cg-8", name: "Organic Mulch Protector", price: "₹280", rating: 4.7, image: "https://images.unsplash.com/photo-1508962914676-134849a727f0?auto=format&fit=crop&w=500&q=80" },
+      { id: "cg-9", name: "Garden Tool Eco-Set", price: "₹899", rating: 4.8, image: "https://images.unsplash.com/photo-1617576683096-00fc8eecb3af?auto=format&fit=crop&w=500&q=80" },
+      { id: "cg-10", name: "Carbon Monitor Sensor", price: "₹1,499", rating: 4.3, image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&w=500&q=80" }
+    ]
   },
-
   {
     id: "miyawaki-forest",
     title: "Miyawaki Forest",
     category: "Land & Forests",
-    icon: "Trees", // Added
-    image:
-      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80",
-    shortDesc:
-      "Creating dense native forests using the Miyawaki method to restore biodiversity.",
-    longDesc:
-      "The Miyawaki method recreates natural forest ecosystems by planting multiple native species closely together. These forests grow significantly faster than conventional plantations and become self-sustaining within a few years.",
-    whyItMatters:
-      "Urban areas are rapidly losing biodiversity and green cover. Miyawaki forests help restore native ecosystems and improve environmental quality.",
-    keyBenefit:
-      "Creates dense forests that grow up to 10 times faster and support significantly higher biodiversity.",
-    futureVision:
-      "Establish urban forests in every major city to improve air quality and ecological balance.",
+    icon: "Trees",
+    image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80",
+    shortDesc: "Creating dense native forests using the Miyawaki method to restore biodiversity.",
+    longDesc: "The Miyawaki method recreates natural forest ecosystems by planting multiple native species closely together. These forests grow significantly faster than conventional plantations and become self-sustaining within a few years.",
+    whyItMatters: "Urban areas are rapidly losing biodiversity and green cover. Miyawaki forests help restore native ecosystems and improve environmental quality.",
+    keyBenefit: "Creates dense forests that grow up to 10 times faster and support significantly higher biodiversity.",
+    futureVision: "Establish urban forests in every major city to improve air quality and ecological balance.",
     stats: {
       primary: "10x Faster",
       label: "Growth Rate",
@@ -87,29 +86,34 @@ export const INITIATIVES_DATA = [
       "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
       "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
     ],
+    products: [
+      { id: "mf-1", name: "Dense Canopy Seed Mix", price: "₹499", rating: 4.9, image: "https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&w=500&q=80" },
+      { id: "mf-2", name: "Deep Root Bio-Fertilizer", price: "₹380", rating: 4.7, image: "https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80" },
+      { id: "mf-3", name: "Miyawaki Sapling Bundle (5 Box)", price: "₹1,250", rating: 5.0, image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=500&q=80" },
+      { id: "mf-4", name: "Forest Soil Revitalizer Bars", price: "₹299", rating: 4.6, image: "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=500&q=80" },
+      { id: "mf-5", name: "Mycorrhizal Fungi Powder", price: "₹420", rating: 4.8, image: "https://images.unsplash.com/photo-1592150621744-aca64f48394a?auto=format&fit=crop&w=500&q=80" },
+      { id: "mf-6", name: "Natural Straw Mulch Roll", price: "₹340", rating: 4.4, image: "https://images.unsplash.com/photo-1508962914676-134849a727f0?auto=format&fit=crop&w=500&q=80" },
+      { id: "mf-7", name: "Biomass Accelerator Spray", price: "₹450", rating: 4.7, image: "https://images.unsplash.com/photo-1533460004989-cef01064af7e?auto=format&fit=crop&w=500&q=80" },
+      { id: "mf-8", name: "Soil Moisture Tester Meter", price: "₹650", rating: 4.3, image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&w=500&q=80" },
+      { id: "mf-9", name: "Wild Heritage Shrub Seeds", price: "₹199", rating: 4.5, image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=500&q=80" },
+      { id: "mf-10", name: "Self-Watering Bamboo Pots", price: "₹550", rating: 4.6, image: "https://images.unsplash.com/photo-1617576683096-00fc8eecb3af?auto=format&fit=crop&w=500&q=80" }
+    ]
   },
-
   {
     id: "stp-sewage",
     title: "STP Sewage Treatment",
     category: "Water Solutions",
-    icon: "Droplets", // Added
-    image:
-      "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80",
-    shortDesc:
-      "Advanced sewage treatment systems ensuring clean water returns safely to nature.",
-    longDesc:
-      "Our sewage treatment solutions utilize biological purification and modern filtration technologies to recycle wastewater efficiently while protecting the environment.",
-    whyItMatters:
-      "Water pollution remains one of the largest environmental challenges. Effective sewage treatment protects ecosystems and public health.",
-    keyBenefit:
-      "Transforms wastewater into reusable water while minimizing environmental impact.",
-    futureVision:
-      "Build decentralized treatment systems that make water recycling accessible to every community.",
+    icon: "Droplets",
+    image: "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80",
+    shortDesc: "Advanced sewage treatment systems ensuring clean water returns safely to nature.",
+    longDesc: "Our sewage treatment solutions utilize biological purification and modern filtration technologies to recycle wastewater efficiently while protecting the environment.",
+    whyItMatters: "Water pollution remains one of the largest environmental challenges. Effective sewage treatment protects ecosystems and public health.",
+    keyBenefit: "Transforms wastewater into reusable water while minimizing environmental impact.",
+    futureVision: "Build decentralized treatment systems that make water recycling accessible to every community.",
     stats: {
       primary: "4.5M Liters",
       label: "Water Recycled Daily",
-      trees: "150+", // Added (STP areas typically have perimeter plantations)
+      trees: "150+",
       volunteers: "120+",
       communities: "20+",
     },
@@ -132,29 +136,34 @@ export const INITIATIVES_DATA = [
       "https://images.unsplash.com/photo-1541535881962-e668f2244a26",
       "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
     ],
+    products: [
+      { id: "stp-1", name: "Bio-Enzyme Water Cleaner", price: "₹349", rating: 4.7, image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&w=500&q=80" },
+      { id: "stp-2", name: "Activated Carbon Filter Media", price: "₹550", rating: 4.6, image: "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=500&q=80" },
+      { id: "stp-3", name: "Natural Odor Control Block", price: "₹220", rating: 4.4, image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=500&q=80" },
+      { id: "stp-4", name: "Eco Wastewater Clarifier", price: "₹450", rating: 4.5, image: "https://images.unsplash.com/photo-1533460004989-cef01064af7e?auto=format&fit=crop&w=500&q=80" },
+      { id: "stp-5", name: "Effluent Treatment Powder", price: "₹799", rating: 4.8, image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=500&q=80" },
+      { id: "stp-6", name: "Water Quality Testing Strips", price: "₹180", rating: 4.3, image: "https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&w=500&q=80" },
+      { id: "stp-7", name: "Biological Sludge Degrader", price: "₹620", rating: 4.9, image: "https://images.unsplash.com/photo-1592150621744-aca64f48394a?auto=format&fit=crop&w=500&q=80" },
+      { id: "stp-8", name: "Sediment Filter Mesh Pad", price: "₹270", rating: 4.5, image: "https://images.unsplash.com/photo-1508962914676-134849a727f0?auto=format&fit=crop&w=500&q=80" },
+      { id: "stp-9", name: "Wastewater Ph Balance Salts", price: "₹310", rating: 4.4, image: "https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80" },
+      { id: "stp-10", name: "Industrial Pipe Scale Cleaner", price: "₹1,150", rating: 4.6, image: "https://images.unsplash.com/photo-1617576683096-00fc8eecb3af?auto=format&fit=crop&w=500&q=80" }
+    ]
   },
-
   {
     id: "water-conservation",
     title: "Water Conservation",
     category: "Water Solutions",
-    icon: "Waves", // Added
-    image:
-      "https://images.unsplash.com/photo-1521207418485-99c705420785?auto=format&fit=crop&w=1600&q=80",
-    shortDesc:
-      "Conserving every drop through rainwater harvesting and efficient water management.",
-    longDesc:
-      "Water conservation focuses on reducing wastage, improving storage, harvesting rainwater, and promoting responsible consumption practices.",
-    whyItMatters:
-      "Growing populations and climate change are placing enormous pressure on freshwater resources.",
-    keyBenefit:
-      "Ensures long-term water security while protecting natural water resources.",
-    futureVision:
-      "Create water-resilient communities capable of thriving during droughts and climate challenges.",
+    icon: "Waves",
+    image: "https://images.unsplash.com/photo-1521207418485-99c705420785?auto=format&fit=crop&w=1600&q=80",
+    shortDesc: "Conserving every drop through rainwater harvesting and efficient water management.",
+    longDesc: "Water conservation focuses on reducing wastage, improving storage, harvesting rainwater, and promoting responsible consumption practices.",
+    whyItMatters: "Growing populations and climate change are placing enormous pressure on freshwater resources.",
+    keyBenefit: "Ensures long-term water security while protecting natural water resources.",
+    futureVision: "Create water-resilient communities capable of thriving during droughts and climate challenges.",
     stats: {
       primary: "85%",
       label: "Runoff Captured",
-      trees: "800+", // Added (Catchment areas and roots help in water retention)
+      trees: "800+",
       volunteers: "250+",
       communities: "45+",
     },
@@ -177,29 +186,34 @@ export const INITIATIVES_DATA = [
       "https://images.unsplash.com/photo-1508962914676-134849a727f0",
       "https://images.unsplash.com/photo-1439066615861-d1af74d74000",
     ],
+    products: [
+      { id: "wc-1", name: "Rain Tap Diversion Filter", price: "₹850", rating: 4.8, image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&w=500&q=80" },
+      { id: "wc-2", name: "Eco Aerator Tap Valve", price: "₹199", rating: 4.6, image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=500&q=80" },
+      { id: "wc-3", name: "Deep Soil Moisture Gel", price: "₹340", rating: 4.7, image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=500&q=80" },
+      { id: "wc-4", name: "Smart Groundwater Recharger", price: "₹2,499", rating: 4.9, image: "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=500&q=80" },
+      { id: "wc-5", name: "Drip Irrigation Controller", price: "₹1,250", rating: 4.5, image: "https://images.unsplash.com/photo-1617576683096-00fc8eecb3af?auto=format&fit=crop&w=500&q=80" },
+      { id: "wc-6", name: "Anti-Evaporation Cover Net", price: "₹420", rating: 4.2, image: "https://images.unsplash.com/photo-1508962914676-134849a727f0?auto=format&fit=crop&w=500&q=80" },
+      { id: "wc-7", name: "Rain Barrel Fresh Tablet", price: "₹260", rating: 4.6, image: "https://images.unsplash.com/photo-1592150621744-aca64f48394a?auto=format&fit=crop&w=500&q=80" },
+      { id: "wc-8", name: "Water Flow Meter Gauge", price: "₹599", rating: 4.4, image: "https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&w=500&q=80" },
+      { id: "wc-9", name: "Root Zone Watering Spike", price: "₹150", rating: 4.7, image: "https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80" },
+      { id: "wc-10", name: "Greywater Multi-Mesh Kit", price: "₹950", rating: 4.5, image: "https://images.unsplash.com/photo-1533460004989-cef01064af7e?auto=format&fit=crop&w=500&q=80" }
+    ]
   },
-
   {
     id: "microgreen-farming",
     title: "Microgreen Farming",
     category: "Sustainable Food",
-    icon: "Leaf", // Added
-    image:
-      "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1600&q=80",
-    shortDesc:
-      "Producing highly nutritious food using sustainable farming methods.",
-    longDesc:
-      "Microgreens offer exceptional nutritional value while requiring significantly less water and land compared to traditional agriculture.",
-    whyItMatters:
-      "Urban populations require sustainable food solutions that reduce environmental impact.",
-    keyBenefit:
-      "Produces nutrient-dense food using minimal resources.",
-    futureVision:
-      "Promote urban food security through scalable microgreen farming systems.",
+    icon: "Leaf",
+    image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1600&q=80",
+    shortDesc: "Producing highly nutritious food using sustainable farming methods.",
+    longDesc: "Microgreens offer exceptional nutritional value while requiring significantly less water and land compared to traditional agriculture.",
+    whyItMatters: "Urban populations require sustainable food solutions that reduce environmental impact.",
+    keyBenefit: "Produces nutrient-dense food using minimal resources.",
+    futureVision: "Promote urban food security through scalable microgreen farming systems.",
     stats: {
       primary: "90% Less",
       label: "Water Usage",
-      trees: "50+", // Added (Small agroforestry or surrounding shade trees)
+      trees: "50+",
       volunteers: "80+",
       communities: "15+",
     },
@@ -222,29 +236,34 @@ export const INITIATIVES_DATA = [
       "https://images.unsplash.com/photo-1461354464878-ad92f492a5a0",
       "https://images.unsplash.com/photo-1498837167922-ddd27525d352",
     ],
+    products: [
+      { id: "mg-1", name: "Organic Alfalfa Seeds", price: "₹199", rating: 4.9, image: "https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&w=500&q=80" },
+      { id: "mg-2", name: "Premium Coco Peat Brick", price: "₹120", rating: 4.7, image: "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=500&q=80" },
+      { id: "mg-3", name: "Sprouting Grow Tray Set", price: "₹350", rating: 4.6, image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=500&q=80" },
+      { id: "mg-4", name: "Broccoli Microgreen Kit", price: "₹450", rating: 4.9, image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=500&q=80" },
+      { id: "mg-5", name: "Fine Water Mist Sprayer", price: "₹175", rating: 4.4, image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&w=500&q=80" },
+      { id: "mg-6", name: "Organic Radish Seed Pack", price: "₹149", rating: 4.8, image: "https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80" },
+      { id: "mg-7", name: "Sunflower Sprout Master Blend", price: "₹240", rating: 4.7, image: "https://images.unsplash.com/photo-1592150621744-aca64f48394a?auto=format&fit=crop&w=500&q=80" },
+      { id: "mg-8", name: "Cellulose Sprouting Pads", price: "₹190", rating: 4.5, image: "https://images.unsplash.com/photo-1508962914676-134849a727f0?auto=format&fit=crop&w=500&q=80" },
+      { id: "mg-9", name: "Urban Farmer Apron", price: "₹499", rating: 4.6, image: "https://images.unsplash.com/photo-1617576683096-00fc8eecb3af?auto=format&fit=crop&w=500&q=80" },
+      { id: "mg-10", name: "Microgreen Liquid Mineral Mix", price: "₹299", rating: 4.8, image: "https://images.unsplash.com/photo-1533460004989-cef01064af7e?auto=format&fit=crop&w=500&q=80" }
+    ]
   },
-
   {
     id: "herbal-nursery",
     title: "Herbal Nursery",
     category: "Sustainable Food",
-    icon: "Flower", // Added
-    image:
-      "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=1600&q=80",
-    shortDesc:
-      "Growing medicinal and aromatic plants for healthier communities.",
-    longDesc:
-      "Our herbal nursery preserves valuable medicinal plants while promoting traditional wellness and biodiversity conservation.",
-    whyItMatters:
-      "Many medicinal plant species face habitat loss and declining populations.",
-    keyBenefit:
-      "Protects traditional medicinal knowledge and biodiversity.",
-    futureVision:
-      "Create community herbal gardens across regions to support sustainable wellness.",
+    icon: "Flower",
+    image: "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=1600&q=80",
+    shortDesc: "Growing medicinal and aromatic plants for healthier communities.",
+    longDesc: "Our herbal nursery preserves valuable medicinal plants while promoting traditional wellness and biodiversity conservation.",
+    whyItMatters: "Many medicinal plant species face habitat loss and declining populations.",
+    keyBenefit: "Protects traditional medicinal knowledge and biodiversity.",
+    futureVision: "Create community herbal gardens across regions to support sustainable wellness.",
     stats: {
       primary: "150+",
       label: "Protected Species",
-      trees: "1200+", // Added (Herbal nurseries include medicinal shrubs and trees like Neem, Tulsi bushes, etc.)
+      trees: "1200+",
       volunteers: "90+",
       communities: "25+",
     },
@@ -267,5 +286,17 @@ export const INITIATIVES_DATA = [
       "https://images.unsplash.com/photo-1416879595882-3373a0480b5b",
       "https://images.unsplash.com/photo-1464226184884-fa280b87c399",
     ],
-  },
+    products: [
+      { id: "hn-1", name: "Premium Ashwagandha Seeds", price: "₹249", rating: 4.9, image: "https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&w=500&q=80" },
+      { id: "hn-2", name: "Organic Holy Tulsi Starter Kit", price: "₹180", rating: 4.8, image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=500&q=80" },
+      { id: "hn-3", name: "Medicinal Shrub Clay Pot", price: "₹320", rating: 4.5, image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=500&q=80" },
+      { id: "hn-4", name: "Lemongrass Essential Extracts", price: "₹450", rating: 4.7, image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&w=500&q=80" },
+      { id: "hn-5", name: "Organic Neem Pest Shield Liquid", price: "₹299", rating: 4.6, image: "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=500&q=80" },
+      { id: "hn-6", name: "Pure Giloy Stem Cuttings Pack", price: "₹150", rating: 4.8, image: "https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=500&q=80" },
+      { id: "hn-7", name: "Aromatic Herbal Tea Blend Pack", price: "₹380", rating: 4.7, image: "https://images.unsplash.com/photo-1592150621744-aca64f48394a?auto=format&fit=crop&w=500&q=80" },
+      { id: "hn-8", name: "Natural Clay Plant Tag Pins", price: "₹120", rating: 4.4, image: "https://images.unsplash.com/photo-1508962914676-134849a727f0?auto=format&fit=crop&w=500&q=80" },
+      { id: "hn-9", name: "Herbalist Solid Pruning Shears", price: "₹750", rating: 4.8, image: "https://images.unsplash.com/photo-1617576683096-00fc8eecb3af?auto=format&fit=crop&w=500&q=80" },
+      { id: "hn-10", name: "Stevia Sweetener Leaf Seeds", price: "₹210", rating: 4.6, image: "https://images.unsplash.com/photo-1533460004989-cef01064af7e?auto=format&fit=crop&w=500&q=80" }
+    ]
+  }
 ];
