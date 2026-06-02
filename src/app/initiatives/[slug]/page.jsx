@@ -1,6 +1,8 @@
+"use client";
 
-import { notFound } from "next/navigation";
+import { use, useState } from "react";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { 
   ArrowLeft, 
   Sprout, 
@@ -16,7 +18,11 @@ import {
   Users,
   Building2,
   Calendar,
-  Sparkles
+  Sparkles,
+  ShoppingBag,
+  ExternalLink,
+  ChevronLeft,
+  ChevronRight
 } from "lucide-react";
 import { INITIATIVES_DATA } from "@/data/initiatives";
 
@@ -29,13 +35,25 @@ const iconMap = {
   Flower,
 };
 
-export default async function InitiativeDetails({ params }) {
-  const { slug } = await params;
+export default function InitiativeDetails({ params }) {
+  const unwrappedParams = use(params);
+  const { slug } = unwrappedParams;
+  
   const initiative = INITIATIVES_DATA.find((item) => item.id === slug);
 
   if (!initiative) {
     notFound();
   }
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 4;
+  
+  const totalProducts = initiative.products?.length || 0;
+  const totalPages = Math.ceil(totalProducts / itemsPerPage);
+  
+  const indexOfLastProduct = currentPage * itemsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - itemsPerPage;
+  const currentProducts = initiative.products?.slice(indexOfFirstProduct, indexOfLastProduct) || [];
 
   const IconComponent = iconMap[initiative.icon] || Sprout;
 
@@ -107,7 +125,7 @@ export default async function InitiativeDetails({ params }) {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
           <div className="lg:col-span-2 space-y-8">
             <div className="bg-white rounded-[32px] p-8 sm:p-10 border border-[#dde8d8] shadow-xs">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-[#102414] mb-6 flex items-center gap-3">
@@ -207,6 +225,90 @@ export default async function InitiativeDetails({ params }) {
               </div>
             )}
           </div>
+        </div>
+
+        <div className="bg-white rounded-[32px] p-8 md:p-10 border border-[#dde8d8] shadow-sm">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 border-b border-gray-100 pb-6">
+            <div>
+              <h2 className="text-2xl sm:text-3xl font-black text-[#102414] flex items-center gap-2">
+                <ShoppingBag className="text-[#1f7d2d]" />
+                Wellness Ecosystem Products
+              </h2>
+              <p className="text-sm text-gray-500 mt-1">Authentic natural remedies and solutions from wellnesstillulast.com</p>
+            </div>
+            
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            {currentProducts.map((product) => (
+              <div key={product.id} className="group bg-[#fdfefe] border border-[#dde8d8] rounded-2xl overflow-hidden hover:shadow-md transition-all duration-300 flex flex-col h-full">
+                <div className="relative h-48 w-full overflow-hidden bg-gray-50">
+                  <img 
+                    src={product.image} 
+                    alt={product.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <span className="absolute top-3 right-3 bg-white/90 backdrop-blur-xs px-2.5 py-1 rounded-md text-xs font-bold text-[#1f7d2d]">
+                    ★ {product.rating}
+                  </span>
+                </div>
+                
+                <div className="p-5 flex flex-col justify-between flex-grow">
+                  <div>
+                    <h4 className="font-bold text-[#102414] text-base group-hover:text-[#1f7d2d] transition-colors line-clamp-2">
+                      {product.name}
+                    </h4>
+                  </div>
+                  
+                  <div className="mt-4 flex items-center justify-between pt-3 border-t border-gray-100">
+                    <span className="text-lg font-black text-[#1f7d2d]">{product.price}</span>
+                    <a
+                      href="https://wellnesstillulast.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-bold text-white bg-[#102414] group-hover:bg-[#1f7d2d] px-3 py-2 rounded-lg transition-colors"
+                    >
+                      Buy Now
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {totalPages > 1 && (
+            <div className="flex items-center justify-center gap-2 mt-10 pt-6 border-t border-gray-100">
+              <button
+                onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                disabled={currentPage === 1}
+                className="p-2 border border-[#dde8d8] rounded-xl text-gray-600 hover:bg-gray-50 disabled:opacity-40 disabled:hover:bg-transparent transition-colors"
+              >
+                <ChevronLeft size={18} />
+              </button>
+              
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                <button
+                  key={page}
+                  onClick={() => setCurrentPage(page)}
+                  className={`w-10 h-10 rounded-xl font-bold text-sm transition-all ${
+                    currentPage === page
+                      ? "bg-[#1f7d2d] text-white shadow-xs"
+                      : "border border-[#dde8d8] text-gray-600 hover:bg-gray-50"
+                  }`}
+                >
+                  {page}
+                </button>
+              ))}
+
+              <button
+                onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+                disabled={currentPage === totalPages}
+                className="p-2 border border-[#dde8d8] rounded-xl text-gray-600 hover:bg-gray-50 disabled:opacity-40 disabled:hover:bg-transparent transition-colors"
+              >
+                <ChevronRight size={18} />
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </section>
