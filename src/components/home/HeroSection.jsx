@@ -7,110 +7,15 @@ import {
   Users,
   ArrowRight,
   Sparkles,
-  ShieldCheck,
   Sprout,
   Globe,
+  Trees,
+  Droplets,
+  Waves,
+  Flower,
 } from "lucide-react";
 import Link from "next/link";
-
-const INITIATIVES_DATA = [
-  {
-    id: "carbon-garden",
-    title: "Carbon Garden",
-    category: "Land & Forests",
-    shortDesc:
-      "Creating green spaces that absorb carbon and combat climate change naturally.",
-    longDesc:
-      "Our Carbon Garden projects leverage high-sequestration plant species curated specifically to maximize natural CO2 absorption. By utilizing organic composting, urban soil optimization, and native flora, we turn unused urban plots into highly efficient carbon-capturing micro-ecosystems.",
-    icon: "CO2",
-    iconBg: "bg-emerald-50 text-emerald-700 border-emerald-100",
-    image:
-      "https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&q=80&w=800",
-    stats: { primary: "12.4 Tons", label: "CO2 Sequestrated / Yr" },
-    keyBenefit:
-      "Utilizes multi-layered canopy structures to maximize vertical carbon absorption density by 4x.",
-  },
-  {
-    id: "miyawaki-forest",
-    title: "Miyawaki Forest",
-    category: "Land & Forests",
-    shortDesc:
-      "Creating dense, native forests using the Miyawaki method to restore biodiversity.",
-    longDesc:
-      "The Miyawaki method replicates natural ecosystem dynamics by planting dozens of native species close together. This creates self-sustaining, multi-tiered forests that grow up to 10 times faster, are 30 times denser, and house 100 times more biodiversity than conventional plantations.",
-    icon: "Sprout",
-    iconBg: "bg-green-50 text-green-700 border-green-100",
-    image:
-      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&q=80&w=800",
-    stats: { primary: "10x Faster", label: "Growth Rates" },
-    keyBenefit:
-      "Restores local bird, insect, and soil microbial life while serving as excellent localized air filtration blocks.",
-  },
-  {
-    id: "stp-sewage",
-    title: "STP Sewage Treatment",
-    category: "Water Solutions",
-    shortDesc:
-      "Advanced sewage treatment plants ensuring clean water is returned to nature safely.",
-    longDesc:
-      "Our modern Sewage Treatment Plants (STP) implement biological purification paired with advanced multi-tier filtration. By omitting toxic chemicals, we cycle graywater back into local ground reservoirs and agricultural channels completely pathogen-free and nutrient-rich.",
-    icon: "Shield",
-    iconBg: "bg-blue-50 text-blue-700 border-blue-100",
-    image:
-      "https://images.unsplash.com/photo-1541535881962-e668f2244a26?auto=format&fit=crop&q=80&w=800",
-    stats: { primary: "4.5M Liters", label: "Daily Recycled Water" },
-    keyBenefit:
-      "Decentralized modular setups that operate under 35% lower energy profiles compared to municipal baselines.",
-  },
-  {
-    id: "water-conservation",
-    title: "Water Conservation",
-    category: "Water Solutions",
-    shortDesc:
-      "Conserving every drop through innovative solutions, rainwater harvesting, and usage tracking.",
-    longDesc:
-      "Water Conservation tackles modern dry seasons through localized smart catchments, groundwater recharge wells, and low-waste flow systems. We build resilient local rain reservoirs that prevent water table depletion and minimize surface runoff erosion.",
-    icon: "Droplet",
-    iconBg: "bg-cyan-50 text-cyan-700 border-cyan-100",
-    image:
-      "https://images.unsplash.com/photo-1508962914676-134849a727f0?auto=format&fit=crop&q=80&w=800",
-    stats: { primary: "85% Saved", label: "Storm Runoff Caught" },
-    keyBenefit:
-      "Implements gravel-charcoal aquifer filters that pre-treat collected rainfall back to drinkable standard safely.",
-  },
-  {
-    id: "microgreen-farming",
-    title: "Microgreen Farming",
-    category: "Sustainable Food",
-    shortDesc:
-      "Promoting healthy living through sustainable microgreen farming and urban agriculture.",
-    longDesc:
-      "Microgreens contain up to 40 times higher nutrient densities than their fully mature counterparts. We cultivate organic superfoods inside compact vertical systems using 90% less land and water than traditional agriculture, bringing fresh nutrition directly to urban communities.",
-    icon: "Leaf",
-    iconBg: "bg-lime-50 text-lime-700 border-lime-100",
-    image:
-      "https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&q=80&w=800",
-    stats: { primary: "90% Less", label: "Water Consumption" },
-    keyBenefit:
-      "Zero pesticides or chemical runoff, utilizing nutrient-rich organic compost bases from carbon gardens.",
-  },
-  {
-    id: "herbal-nursery",
-    title: "Herbal Nursery",
-    category: "Sustainable Food",
-    shortDesc:
-      "Growing a wide variety of medicinal and aromatic plants for a healthier tomorrow.",
-    longDesc:
-      "Our Herbal Nursery preserves, propagates, and distributes vital therapeutic and culinary plants. We empower communities to reduce dependency on industrial pharmaceuticals by providing access to homegrown remedies, native plants, and botanical wellness guidance.",
-    icon: "Pot",
-    iconBg: "bg-amber-50 text-amber-700 border-amber-100",
-    image:
-      "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&q=80&w=800",
-    stats: { primary: "150+ Species", label: "Protected Varieties" },
-    keyBenefit:
-      "Protects and re-introduces highly endangered local herbal flora into residential and suburban parks.",
-  },
-];
+import { INITIATIVES_DATA } from "@/data/initiatives";
 
 const CATEGORIES = [
   "All",
@@ -119,9 +24,18 @@ const CATEGORIES = [
   "Sustainable Food",
 ];
 
+const iconMap = {
+  Sprout: Sprout,
+  Trees: Trees,
+  Droplets: Droplets,
+  Waves: Waves,
+  Leaf: Leaf,
+  Flower: Flower,
+};
+
 export default function HeroSection() {
   const [selectedCategory, setSelectedCategory] = useState("All");
-  
+
   const filteredInitiatives = useMemo(() => {
     if (selectedCategory === "All") return INITIATIVES_DATA;
     return INITIATIVES_DATA.filter(
@@ -147,9 +61,9 @@ export default function HeroSection() {
           </h1>
 
           <p className="mt-6 text-base sm:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Explore our key initiatives that contribute to environmental
-            conservation, resource management, and a sustainable,
-            climate-resilient future.
+            Together we are restoring biodiversity, conserving water, promoting
+            sustainable agriculture, reducing carbon emissions, and creating
+            resilient ecosystems for future generations.
           </p>
         </header>
 
@@ -172,86 +86,114 @@ export default function HeroSection() {
 
         {/* INITIATIVES GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:mb-14">
-          {filteredInitiatives.map((item, index) => (
-            <article
-              key={item.id}
-              className="group bg-white rounded-[32px] overflow-hidden border border-[#dde8d8] shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full relative"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              {/* Card Image Block */}
-              <div className="relative h-64 overflow-visible bg-emerald-50">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  loading="lazy"
-                  onError={(e) => {
-                    e.target.src =
-                      "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=800";
-                  }}
-                />
+          {filteredInitiatives.map((item, index) => {
+            // Dynamic Icon Component fetch kar rahe hain
+            const IconComponent = iconMap[item.icon] || Sprout;
 
-                {/* Category Tag on Image top right */}
-                <span className="absolute top-4 right-4 bg-white/90 backdrop-blur-md text-[#1f7d2d] px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide shadow-sm uppercase">
-                  {item.category}
-                </span>
+            return (
+              <article
+                key={item.id}
+                className="group bg-white rounded-[32px] overflow-hidden border border-[#dde8d8] shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full relative"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                {/* Card Image Block */}
+                <div className="relative h-64 overflow-visible bg-emerald-50">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
+                    onError={(e) => {
+                      e.target.src =
+                        "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=800";
+                    }}
+                  />
 
-                <div className="absolute -bottom-8 left-8 w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-xl border border-[#dde8d8] z-10">
-                  <div className="w-12 h-12 rounded-full bg-[#f1f8ee] flex items-center justify-center text-[#1f7d2d]">
-                    {item.icon === "CO2" && (
-                      <span className="font-extrabold text-xs">CO₂</span>
-                    )}
-                    {item.icon === "Sprout" && <Sprout className="w-6 h-6" />}
-                    {item.icon === "Shield" && (
-                      <ShieldCheck className="w-6 h-6" />
-                    )}
-                    {item.icon === "Droplet" && <Droplet className="w-6 h-6" />}
-                    {item.icon === "Leaf" && <Leaf className="w-6 h-6" />}
-                    {item.icon === "Pot" && (
-                      <Sprout className="w-6 h-6 rotate-45" />
-                    )}
+                  {/* Category Tag on Image top right */}
+                  <span className="absolute top-4 right-4 bg-white/90 backdrop-blur-md text-[#1f7d2d] px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide shadow-sm uppercase">
+                    {item.category}
+                  </span>
+
+                  <div className="absolute -bottom-8 left-8 w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-xl border border-[#dde8d8] z-10">
+                    <div className="w-12 h-12 rounded-full bg-[#f1f8ee] flex items-center justify-center text-[#1f7d2d]">
+                      {/* Dynamic Icon directly rendered here */}
+                      <IconComponent className="w-6 h-6" />
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Card Body */}
-              <div className="px-8 pt-10 pb-8 flex-grow flex flex-col justify-between">
-                <div>
-                  <h3 className="text-2xl font-bold text-[#102414] group-hover:text-[#1f7d2d] transition-colors duration-300">
-                    {item.title}
-                  </h3>
-                  <p className="mt-4 text-[#526456] leading-relaxed text-[15px] line-clamp-3">
-                    {item.shortDesc}
-                  </p>
-                </div>
+                {/* Card Body */}
+                <div className="px-8 pt-10 pb-8 flex-grow flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-2xl font-bold text-[#102414] group-hover:text-[#1f7d2d] transition-colors duration-300">
+                      {item.title}
+                    </h3>
 
-                <div className="mt-8 pt-6 border-t border-dashed border-[#dde8d8] flex items-center justify-between">
-                  {/* Micro metric display */}
-                  <div className="text-left">
-                    <p className="text-xs text-gray-400 font-medium tracking-wide uppercase">
-                      Impact Indicator
+                    <p className="mt-4 text-[#526456] leading-relaxed text-[15px] line-clamp-3">
+                      {item.shortDesc}
                     </p>
-                    <p className="text-sm font-bold text-[#1f7d2d] mt-0.5">
-                      {item.stats.primary}
-                    </p>
+
+                    <div className="flex flex-wrap gap-2 mt-5">
+                      {item.benefits?.slice(0, 3).map((benefit) => (
+                        <span
+                          key={benefit}
+                          className="px-3 py-1 bg-[#f1f8ee] text-[#1f7d2d] text-xs font-semibold rounded-full"
+                        >
+                          {benefit}
+                        </span>
+                      ))}
+                    </div>
                   </div>
 
-                  <Link
-                    href={`initiatives/${item.id}`}
-                    className="flex items-center gap-1.5 text-sm font-bold text-[#1f7d2d] group-hover:gap-3 transition-all duration-300 focus:outline-none hover:underline"
-                  >
-                    <span>Learn More</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
+                  <div className="mt-8 pt-6 border-t border-dashed border-[#dde8d8] flex items-center justify-between">
+                    <div className="grid grid-cols-3 gap-3 flex-1">
+                      <div>
+                        <p className="text-[10px] text-gray-400 uppercase tracking-wider">
+                          Impact
+                        </p>
+                        <p className="text-sm font-bold text-[#1f7d2d] mt-0.5 truncate">
+                          {item.stats.primary}
+                        </p>
+                      </div>
+
+                      <div>
+                        <p className="text-[10px] text-gray-400 uppercase tracking-wider">
+                          Trees
+                        </p>
+                        <p className="text-sm font-bold text-[#1f7d2d] mt-0.5">
+                          {item.stats.trees}
+                        </p>
+                      </div>
+
+                      <div>
+                        <p className="text-[10px] text-gray-400 uppercase tracking-wider">
+                          People
+                        </p>
+                        <p className="text-sm font-bold text-[#1f7d2d] mt-0.5">
+                          {item.stats.communities}
+                        </p>
+                      </div>
+                    </div>
+
+                    <Link
+                      href={`/initiatives/${item.id}`}
+                      className="flex items-center gap-1.5 text-sm font-bold text-[#1f7d2d] ml-4 shrink-0"
+                    >
+                      <span className="relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[#1f7d2d] after:transition-all after:duration-300 hover:after:w-full">
+                        Learn More
+                      </span>
+
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            );
+          })}
         </div>
 
         {/* SMALL ACTIONS, BIG IMPACT BANNER */}
         <section className="bg-linear-to-br from-[#102414] via-[#14361b] to-[#1f7d2d] rounded-[40px] text-white overflow-hidden shadow-2xl relative">
-          {/* Subtle Decorative Pattern Background */}
           <div className="absolute inset-0 opacity-15 mix-blend-overlay bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
           <div className="relative z-10 px-6 sm:px-12 py-16 lg:py-20 flex flex-col lg:flex-row items-center justify-between gap-12">
@@ -274,15 +216,15 @@ export default function HeroSection() {
               </p>
 
               <div className="mt-8">
-                <button
-                  onClick={() => setShowInvolvementModal(true)}
-                  className="inline-flex items-center gap-3 bg-white text-[#102414] px-8 py-4.5 rounded-full font-bold text-base hover:bg-[#b6ff7a] hover:scale-105 active:scale-95 transition-all duration-300 shadow-xl group cursor-pointer"
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-3 bg-white text-[#102414] px-8 py-4 rounded-full font-bold text-base hover:bg-[#b6ff7a] hover:scale-105 transition-all duration-300 shadow-xl group"
                 >
                   <span>Get Involved</span>
-                  <span className="w-6 h-6 rounded-full bg-[#102414] text-white flex items-center justify-center group-hover:translate-x-1.5 transition-transform duration-300">
+                  <span className="w-6 h-6 rounded-full bg-[#102414] text-white flex items-center justify-center">
                     <ArrowRight className="w-3.5 h-3.5" />
                   </span>
-                </button>
+                </Link>
               </div>
             </div>
 
@@ -346,7 +288,6 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Subtle bottom leaf vector background */}
           <div className="absolute right-0 bottom-0 pointer-events-none opacity-10 max-w-xs transform translate-x-12 translate-y-12">
             <Globe className="w-72 h-72 text-white" />
           </div>
