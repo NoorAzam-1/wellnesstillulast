@@ -36,7 +36,7 @@ export default function MostLovedProducts() {
               <Heart className={`w-4 h-4 ${liked[product.id] ? 'fill-red-500 text-red-500' : ''}`} />
             </button>
 
-            <div className="w-full aspect-[4/3] rounded-xl mb-4 overflow-hidden bg-gray-100 relative">
+            <div className="w-full aspect-4/3 rounded-xl mb-4 overflow-hidden bg-gray-100 relative">
               <img src={product.image} alt={product.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               <span className="absolute top-3 left-3 bg-white/90 backdrop-blur px-2 py-0.5 rounded-full text-[9px] font-bold text-[#1f7d2d] uppercase">
                 {product.badge}
