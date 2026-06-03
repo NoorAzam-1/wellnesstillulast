@@ -143,23 +143,20 @@ export default function FeaturedProducts() {
               className={`${
                 isBig 
                   ? "lg:col-span-7 lg:row-span-2 min-h-[300px] md:min-h-[370px] lg:min-h-[414px] p-5 md:p-8 lg:p-10 rounded-[20px] md:rounded-[28px]" 
-                  : "lg:col-span-5 h-[140px] md:h-[175px] lg:h-[195px] p-4 md:p-6 rounded-[16px] md:rounded-[24px]"
+                  : "lg:col-span-5 h-[140px] md:h-[175px] lg:h-[195px] p-4 md:p-6 rounded-[16px] md:rounded-3xl"
               } relative overflow-hidden flex flex-col justify-end group cursor-pointer shadow-md lg:shadow-lg border border-gray-200/60`}
             >
-              {/* Layout-tracked bright background image */}
               <motion.div 
                 layout={isDesktop}
                 className="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                 style={{ backgroundImage: `url(${item.image})` }}
               />
               
-              {/* Soft and subtle bottom-only gradient overlay for text readability */}
               <motion.div 
                 layout={isDesktop}
                 className="absolute inset-0 z-10 bg-gradient-to-t from-black/85 via-black/40 to-transparent"
               />
 
-              {/* Floating Badge/Icon */}
               <div className={`absolute top-4 ${isBig ? "left-4" : "right-4"} z-20 ${isBig ? "bg-black/50 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10" : "w-8 h-8 md:w-10 md:h-10 rounded-full bg-black/40 backdrop-blur-md border border-white/10"} flex items-center justify-center text-white`}>
                 <IconComponent className={`${isBig ? "w-3.5 h-3.5 text-[#b6ff7a] mr-1.5 inline" : "w-4 h-4"}`} />
                 {isBig && (
@@ -167,7 +164,6 @@ export default function FeaturedProducts() {
                 )}
               </div>
 
-              {/* Content Area */}
               <div className={`relative z-20 ${isBig ? "space-y-3 max-w-xl" : "max-w-xs space-y-0.5 md:space-y-1"}`}>
                 {!isBig && (
                   <span className="text-[#b6ff7a] text-[10px] md:text-xs font-semibold tracking-wider uppercase block">
@@ -207,7 +203,6 @@ export default function FeaturedProducts() {
         })}
       </motion.div>
 
-      {/* Slider Indicators */}
       <div className="flex justify-center gap-2 mt-6 md:mt-8">
         {CATEGORIES_DATA.map((cat) => (
           <div 
