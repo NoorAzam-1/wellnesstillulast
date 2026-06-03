@@ -67,7 +67,6 @@ export default function HeroSection() {
           </p>
         </header>
 
-        {/* CATEGORY SELECTOR TABS */}
         <div className="flex flex-wrap justify-center items-center gap-2 mb-6 max-w-2xl mx-auto">
           {CATEGORIES.map((category) => (
             <button
@@ -84,19 +83,16 @@ export default function HeroSection() {
           ))}
         </div>
 
-        {/* INITIATIVES GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:mb-14">
           {filteredInitiatives.map((item, index) => {
-            // Dynamic Icon Component fetch kar rahe hain
             const IconComponent = iconMap[item.icon] || Sprout;
 
             return (
               <article
                 key={item.id}
-                className="group bg-white rounded-[32px] overflow-hidden border border-[#dde8d8] shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full relative"
+                className="group bg-white rounded-4xl overflow-hidden border border-[#dde8d8] shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full relative"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                {/* Card Image Block */}
                 <div className="relative h-64 overflow-visible bg-emerald-50">
                   <img
                     src={item.image}
@@ -109,20 +105,17 @@ export default function HeroSection() {
                     }}
                   />
 
-                  {/* Category Tag on Image top right */}
                   <span className="absolute top-4 right-4 bg-white/90 backdrop-blur-md text-[#1f7d2d] px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide shadow-sm uppercase">
                     {item.category}
                   </span>
 
                   <div className="absolute -bottom-8 left-8 w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-xl border border-[#dde8d8] z-10">
                     <div className="w-12 h-12 rounded-full bg-[#f1f8ee] flex items-center justify-center text-[#1f7d2d]">
-                      {/* Dynamic Icon directly rendered here */}
                       <IconComponent className="w-6 h-6" />
                     </div>
                   </div>
                 </div>
 
-                {/* Card Body */}
                 <div className="px-8 pt-10 pb-8 flex-grow flex flex-col justify-between">
                   <div>
                     <h3 className="text-2xl font-bold text-[#102414] group-hover:text-[#1f7d2d] transition-colors duration-300">
@@ -192,12 +185,10 @@ export default function HeroSection() {
           })}
         </div>
 
-        {/* SMALL ACTIONS, BIG IMPACT BANNER */}
         <section className="bg-linear-to-br from-[#102414] via-[#14361b] to-[#1f7d2d] rounded-[40px] text-white overflow-hidden shadow-2xl relative">
           <div className="absolute inset-0 opacity-15 mix-blend-overlay bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
           <div className="relative z-10 px-6 sm:px-12 py-16 lg:py-20 flex flex-col lg:flex-row items-center justify-between gap-12">
-            {/* Left Content Column */}
             <div className="w-full lg:w-[45%] text-left">
               <div className="inline-flex items-center gap-2 bg-emerald-500/20 text-[#b6ff7a] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
                 <Sparkles className="w-3.5 h-3.5" />
@@ -228,9 +219,7 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* Right Pillars Container */}
             <div className="w-full lg:w-[55%] grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
-              {/* Pillar 1: Plant Trees */}
               <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 text-center flex flex-col items-center hover:bg-white/10 transition-colors duration-300">
                 <div className="w-12 h-12 rounded-full bg-emerald-500/20 text-[#b6ff7a] flex items-center justify-center mb-4 border border-emerald-400/30">
                   <Sprout className="w-6 h-6" />
@@ -244,7 +233,6 @@ export default function HeroSection() {
                 </p>
               </div>
 
-              {/* Pillar 2: Save Water */}
               <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 text-center flex flex-col items-center hover:bg-white/10 transition-colors duration-300">
                 <div className="w-12 h-12 rounded-full bg-cyan-500/20 text-[#b6ff7a] flex items-center justify-center mb-4 border border-cyan-400/30">
                   <Droplet className="w-6 h-6" />
@@ -258,7 +246,6 @@ export default function HeroSection() {
                 </p>
               </div>
 
-              {/* Pillar 3: Reduce Waste */}
               <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 text-center flex flex-col items-center hover:bg-white/10 transition-colors duration-300">
                 <div className="w-12 h-12 rounded-full bg-teal-500/20 text-[#b6ff7a] flex items-center justify-center mb-4 border border-teal-400/30">
                   <Trash2 className="w-6 h-6" />
@@ -272,7 +259,6 @@ export default function HeroSection() {
                 </p>
               </div>
 
-              {/* Pillar 4: Inspire Others */}
               <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 text-center flex flex-col items-center hover:bg-white/10 transition-colors duration-300">
                 <div className="w-12 h-12 rounded-full bg-[#b6ff7a]/20 text-[#b6ff7a] flex items-center justify-center mb-4 border border-[#b6ff7a]/30">
                   <Users className="w-6 h-6" />
