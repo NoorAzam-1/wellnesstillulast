@@ -124,7 +124,7 @@ export default function Header() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.96 }}
-            className="hidden md:flex items-center gap-2 px-7 py-3 rounded-full bg-primary text-white font-semibold shadow-xl relative z-10"
+            className="hidden md:flex items-center gap-2 px-7 py-3 rounded-full bg-primary text-white font-semibold shadow-xl relative z-10 cursor-pointer"
           >
             Join Initiative
           </motion.button>
