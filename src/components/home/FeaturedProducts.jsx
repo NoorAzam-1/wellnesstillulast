@@ -154,7 +154,7 @@ export default function FeaturedProducts() {
               
               <motion.div 
                 layout={isDesktop}
-                className="absolute inset-0 z-10 bg-gradient-to-t from-black/85 via-black/40 to-transparent"
+                className="absolute inset-0 z-10 bg-linear-to-t from-black/85 via-black/40 to-transparent"
               />
 
               <div className={`absolute top-4 ${isBig ? "left-4" : "right-4"} z-20 ${isBig ? "bg-black/50 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10" : "w-8 h-8 md:w-10 md:h-10 rounded-full bg-black/40 backdrop-blur-md border border-white/10"} flex items-center justify-center text-white`}>
