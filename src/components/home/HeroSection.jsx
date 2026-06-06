@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { INITIATIVES_DATA } from "@/data/initiatives";
+import Image from "next/image";
 
 const CATEGORIES = [
   "All",
@@ -94,9 +95,11 @@ export default function HeroSection() {
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="relative h-64 overflow-visible bg-emerald-50">
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.title}
+                    height={500}
+                    width={400}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     loading="lazy"
                     onError={(e) => {
