@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Heart, Star, Plus } from "lucide-react";
+import Image from "next/image";
 
 const PRODUCTS_DATA = [
   { id: 1, title: "Ashwagandha Gold", price: 599, badge: "Best Seller", subtitle: "Daily Wellness", description: "Premium organic capsules for vitality.", image: "/ashwagandhaGold.png", rating: 4.8 },
@@ -37,7 +38,7 @@ export default function MostLovedProducts() {
             </button>
 
             <div className="w-full aspect-4/3 rounded-xl mb-4 overflow-hidden bg-gray-100 relative">
-              <img src={product.image} alt={product.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <Image src={product.image} alt={product.title} height={400} width={300} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               <span className="absolute top-3 left-3 bg-white/90 backdrop-blur px-2 py-0.5 rounded-full text-[9px] font-bold text-[#1f7d2d] uppercase">
                 {product.badge}
               </span>
