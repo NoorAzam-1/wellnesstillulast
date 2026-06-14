@@ -50,7 +50,6 @@ export default function BlogSection() {
       
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
-        {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             <span className="section-tag block mb-4">The Journal</span>
@@ -76,7 +75,6 @@ export default function BlogSection() {
               variants={cardVariants}
               className="group bg-white rounded-[30px] overflow-hidden border border-border hover:-translate-y-2 transition-all duration-500 shadow-lg hover:shadow-2xl flex flex-col cursor-pointer"
             >
-              {/* Image Container with Zoom Hover Effect */}
               <div className="relative h-56 overflow-hidden">
                 <Image 
                   src={blog.image} 
